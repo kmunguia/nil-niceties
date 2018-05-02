@@ -54,7 +54,13 @@ class ProfileScreen {
         before running the tests.)
     */
     var headerBackgroundColor_desugaring_1: Color? {
-        fatalError("delete this line and implement me")
+        let headerBackgroundColor_desugaring_1 : Color
+        if let p = user.avatar?.style.backgroundColor{
+            headerBackgroundColor_desugaring_1 = p
+        } else {
+            headerBackgroundColor_desugaring_1 = (appTheme.backgroundColor)!
+        }
+        return headerBackgroundColor_desugaring_1
     }
 
     /**
@@ -89,7 +95,13 @@ class ProfileScreen {
         Copy the previous method here, and remove all the optional chaining.
     */
     var headerBackgroundColor_desugaring_2: Color? {
-        fatalError("delete this line and implement me")
+        let headerBackgroundColor_desugaring_2 : Color?
+        if let p = user.avatar{
+            headerBackgroundColor_desugaring_2 = p.style.backgroundColor
+        } else {
+            headerBackgroundColor_desugaring_2 = appTheme.backgroundColor
+        }
+        return headerBackgroundColor_desugaring_2
     }
 
     /**
@@ -118,7 +130,16 @@ class ProfileScreen {
         the file, right?)
     */
     var headerBackgroundColor_desugaring_3: Color? {
-        fatalError("delete this line and implement me")
+        let headerBackgroundColor_desugaring_3 : Color?
+        
+        switch user.avatar {
+        case .some(let p):
+            headerBackgroundColor_desugaring_3 = p.style.backgroundColor
+        case .none:
+            headerBackgroundColor_desugaring_3 = appTheme.backgroundColor
+        }
+       
+        return headerBackgroundColor_desugaring_3
     }
 
     /**
@@ -140,7 +161,16 @@ class ProfileScreen {
         Copy the previous method here and remove Swift’s automatic Optional wrapping.
     */
     var headerBackgroundColor_desugaring_4: Color? {
-        fatalError("delete this line and implement me")
+        let headerBackgroundColor_desugaring_4 : Color?
+        
+        switch user.avatar {
+        case let p: T? = .some(let p)
+            headerBackgroundColor_desugaring_4 = p.style.backgroundColor
+        case .none:
+            headerBackgroundColor_desugaring_4 = appTheme.backgroundColor
+        }
+        
+        return headerBackgroundColor_desugaring_4
     }
 
     /**
